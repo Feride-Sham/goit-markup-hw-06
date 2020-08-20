@@ -457,6 +457,42 @@
               <use href="./image/btn.svg#icon-btn"></use>
             </svg>
           </button>
+          <form class="js-speaker-form modal-section">
+            <h2 class="modal-title">
+              Оставьте свои данные, мы вам перезвоним
+            </h2>
+            <ul class="modal-list">
+              <li>
+                <label for="user-name">Имя</label>
+                <input type="text" id="user-name" name="user-name" />
+              </li>
+              <li>
+                <label for="user-tel">Телефон</label>
+                <input type="tel" id="user-tel" name="tel" />
+              </li>
+              <li>
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" />
+              </li>
+              <li>
+                <label for="comment">Комментарий</label>
+                <textarea
+                  class="comment"
+                  name="comment"
+                  id="comment"
+                  rows="10"
+                  placeholder="Введите текст"
+                ></textarea>
+              </li>
+            </ul>
+            <div class="checkbox">
+              <input type="checkbox" name="policy" id="policy" />
+              <label for="policy"
+                >Соглашаюсь с рассылкой и принимаю Условия договора</label
+              >
+            </div>
+            <button class="button btn-submit" type="submit">Отправить</button>
+          </form>
         </div>
       </div>
     </main>
@@ -537,10 +573,28 @@
 
         <div class="footer-box sign-form">
           <b>Подпишитесь на рассылку</b>
+          <form class="footer-form">
+            <input type="email" name="email" placeholder="E-mail" />
+          </form>
           <a href="#" class="button">Подписаться</a>
         </div>
       </div>
     </footer>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
