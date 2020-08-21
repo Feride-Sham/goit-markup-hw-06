@@ -464,34 +464,52 @@
             <ul class="modal-list">
               <li>
                 <label for="user-name">Имя</label>
-                <input type="text" id="user-name" name="user-name" />
+                <div class="field">
+                  <input type="text" id="user-name" name="user-name" />
+                  <svg class="icon-modal" width="12" height="12">
+                    <use href="./image/symbol-modal.svg#icon-icon1"></use>
+                  </svg>
+                </div>
               </li>
               <li>
                 <label for="user-tel">Телефон</label>
-                <input type="tel" id="user-tel" name="tel" />
+                <div class="field">
+                  <input type="tel" id="user-tel" name="tel" />
+                  <svg class="icon-modal" width="13" height="13">
+                    <use href="./image/symbol-modal.svg#icon-icon2"></use>
+                  </svg>
+                </div>
               </li>
               <li>
                 <label for="email">Почта</label>
-                <input type="email" id="email" name="email" />
+                <div class="field">
+                  <input type="email" id="email" name="email" />
+                  <svg class="icon-modal" width="15" height="12">
+                    <use href="./image/symbol-modal.svg#icon-icon3"></use>
+                  </svg>
+                </div>
               </li>
               <li>
                 <label for="comment">Комментарий</label>
                 <textarea
-                  class="comment"
                   name="comment"
                   id="comment"
                   rows="10"
+                  class="comment-window"
                   placeholder="Введите текст"
                 ></textarea>
               </li>
             </ul>
-            <div class="checkbox">
-              <input type="checkbox" name="policy" id="policy" />
-              <label for="policy"
+
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" name="policy" />
+              <span class="checkbox-icon"></span>
+              <span class="agree"
                 >Соглашаюсь с рассылкой и принимаю
-                <a href="">Условия договора</a></label
+                <a href="">Условия договора</a></span
               >
-            </div>
+            </label>
+
             <button class="button btn-submit" type="submit">Отправить</button>
           </form>
         </div>
@@ -574,10 +592,12 @@
 
         <div class="footer-box sign-form">
           <b>Подпишитесь на рассылку</b>
-          <form class="footer-form">
-            <input type="email" name="email" placeholder="E-mail" />
-          </form>
-          <a href="#" class="button">Подписаться</a>
+          <div class="footer-sign-form">
+            <form class="footer-form">
+              <input type="email" name="email" placeholder="E-mail" />
+            </form>
+            <a href="#" class="button">Подписаться</a>
+          </div>
         </div>
       </div>
     </footer>

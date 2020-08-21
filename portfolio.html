@@ -381,9 +381,30 @@
 
         <div class="footer-box sign-form">
           <b>Подпишитесь на рассылку</b>
-          <a href="#" class="button">Подписаться</a>
+          <div class="footer-sign-form">
+            <form class="footer-form">
+              <input type="email" name="email" placeholder="E-mail" />
+            </form>
+            <a href="#" class="button">Подписаться</a>
+          </div>
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
